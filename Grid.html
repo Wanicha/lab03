@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  <h1>Grid System ของ Bootstrap</h1>
+  <p>ปกติแล้ว grid system ที่ Bootstrap ให้มาจะเป็นแบบ 12 คอลัมน์  ซึ่งจะใช้ร่วมกับ container ที่เราเพิ่งสร้างขึ้นมานั่นเอง<br> โดยแต่ละคอลัมน์จะมีความกว้างเท่ากันคือ 60px และจะอยู่ห่างกัน 20px จะได้ว่า (60*12) + (20*11) = 940 หรือความกว้างของ container เรานั่นเอง</p>
+  <p>การจะสร้าง layouts ด้วย Bootstrap ให้เราสร้าง html element ที่มี class “row” ขึ้นมาก่อน ทีนี้เราจะสามารถสร้างแต่ละคอลัมน์ขึ้นมาได้ด้วยการใส่ html element <br>ที่มี class “span*” เข้าไปข้างใน โดย * ที่อยู่ข้างหลัง span นั้นจะเป็นตัวเลขที่จะระบุว่าเราต้องการให้คอลัมน์นี้ “กาง” แค่ไหน สมมติว่าเราจะสร้าง layouts แบบ 12 คอลัมน์ ให้เราใส่โค้ดด้านล่างนี้เข้าไปที่ container ของเรา</p>
+  <p><b>12 คอลัมน์</b></p>
+  <pre class="html" bgcolor="black">&lt;div class="row"&gt;
+    &lt;div class="span1">Column 1;/div&gt;
+    &lt;div class="span1">Column 2;/div&gt;
+    &lt;div class="span1">Column 3;/div&gt;
+    &lt;div class="span1">Column 4;/div&gt;
+    &lt;div class="span1">Column 5;/div&gt;
+    &lt;div class="span1">Column 6;/div&gt;
+    &lt;div class="span1">Column 7;/div&gt;
+    &lt;div class="span1">Column 8;/div&gt;
+    &lt;div class="span1">Column 9;/div&gt;
+    &lt;div class="span1">Column 10;/div&gt;
+    &lt;div class="span1">Column 11;/div&gt;
+    &lt;div class="span1">Column 12;/div&gt;
+&lt;/div&gt;</pre><br>
+จากโค้ดด้านบน เราใส่ html elements ที่มี class ชื่อ “span1″ รวมทั้งหมด 12 elements ด้วยกัน เมื่อพรีวิวดู<br> เราจะพบว่า container ของเราถูกแบ่งออกเป็นคอลัมน์ต่างๆ ที่มีความกว้างเท่ากันทั้งหมดจำนวน 12 คอลัมน์ ด้วยกัน
+<br><br>
+<b>2 คอลัมน์</b>
+<br><br>
+หากเราต้องการแค่ 2 คอลัมน์ โดยเราอยากให้คอลัมน์ทางซ้ายใหญ่กว่าทางขวา เราก็เขียนแบบนี้ได้ค่ะ<br>
+ <pre class="html" bgcolor="black">&lt;div class="row"&gt;
+    &lt;div class="span8">Main;/div&gt;
+    &lt;div class="span4">Sidebar;/div&gt;
+  &lt;/div&gt;</pre><br>
+  จะเห็นว่าความกว้างของทั้ง 2 คอลัมน์ นี้จะเป็น 8 + 4 = 12 พอดี สาเหตุที่เราต้องกำหนดความกว้างให้รวมกันเท่ากับ 12 <br>ก็เพราะว่า grid system ของ bootstrap นั้นเป็นแบบ 12 คอลัมน์ ครับ นั่นหมายความว่าทั้ง 2 คอลัมน์นี้จะกางเต็ม container พอดี
+<br><br>
+<b>3 คอลัมน์</b><br><br>
+
+ในทำนองเดียวกัน หากเราต้องการ 3 คอลัมน์ ก็ให้เรากำหนดความกว้างรวมให้ได้เท่ากับ 12 เหมือนเดิม <br>
+<pre class="html" bgcolor="black">&lt;div class="row"&gt;
+    &lt;div class="span3">Secondary;/div&gt;
+    &lt;div class="span6">Primary;/div&gt;
+    &lt;div class="span3">Sidebar;/div&gt;
+  &lt;/div&gt;</pre><br>
+  <b>Offsetting columns</b><br><br>
+
+ในบางครั้ง เราอาจต้องการเพิ่มระยะห่างระหว่างคอลัมน์ เราสามารถทำได้ด้วยการเพิ่ม class ที่ชื่อ “offset*” เข้าไป <br>
+โดย * นั้นหมายถึงจำนวนของคอลัมน์ที่จะกลายมาเป็นระยะห่าง ลองดูตัวอย่างนี้ค่ะ</br>
+<pre class="html" bgcolor="black">&lt;div class="row"&gt;
+    &lt;div class="span2">Logo;/div&gt;
+    &lt;iv class="span4 offset6">Search;/div&gt;
+  &lt;/div&gt;</pre><br>
+  เมื่อพรีวิวดู เราจะพบว่าทั้ง 2 คอลัมน์นี้ยังคงกางเต็ม container อยู่ เนื่องจาก 2 + 4 + 6 = 12 <br><br>
+  <b>Nesting columns</b><br>
+  นอกจากนั้น เรายังสามารถสร้างคอลัมน์ซ้อนภายในคอลัมน์ได้อีกด้วยนะ ลองดูตัวอย่างนี้<br>
+  <pre class="html" bgcolor="black">
+    &lt;div class="row"&gt;
+          &lt;div class="span8"&gt;
+                 main
+                 &lt;div class="row";/div&gt;
+                       &lt;div class="span2">Menu;/div&gt;
+                       &lt;div class="span6">Content;/div&gt;
+                 &lt;/div&gt;
+          &lt;/div&gt; 
+          &lt;div class="span4">Sidebar;/div&gt;
+  &lt;/div&gt;</pre><br>
+
+
+
+
+
+
+</body>
+</html>
