@@ -7,12 +7,75 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
 </head>
 <body>
 
-<div class="container-fluid">
-  <h1>Grid System ของ Bootstrap</h1>
-  <p>ปกติแล้ว grid system ที่ Bootstrap ให้มาจะเป็นแบบ 12 คอลัมน์  ซึ่งจะใช้ร่วมกับ container ที่เราเพิ่งสร้างขึ้นมานั่นเอง<br> โดยแต่ละคอลัมน์จะมีความกว้างเท่ากันคือ 60px และจะอยู่ห่างกัน 20px จะได้ว่า (60*12) + (20*11) = 940 หรือความกว้างของ container เรานั่นเอง</p>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="http://angsila.cs.buu.ac.th/~58160424/887371/lab03/lab03.html">Blog</a></p>
+      <p><a href="http://angsila.cs.buu.ac.th/~58160424/887371/lab03/Form.html">Form</a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Grid System ของ Bootstrap</h1>
+     <p>ปกติแล้ว grid system ที่ Bootstrap ให้มาจะเป็นแบบ 12 คอลัมน์  ซึ่งจะใช้ร่วมกับ container ที่เราเพิ่งสร้างขึ้นมานั่นเอง<br> โดยแต่ละคอลัมน์จะมีความกว้างเท่ากันคือ 60px และจะอยู่ห่างกัน 20px จะได้ว่า (60*12) + (20*11) = 940 หรือความกว้างของ container เรานั่นเอง</p>
   <p>การจะสร้าง layouts ด้วย Bootstrap ให้เราสร้าง html element ที่มี class “row” ขึ้นมาก่อน ทีนี้เราจะสามารถสร้างแต่ละคอลัมน์ขึ้นมาได้ด้วยการใส่ html element <br>ที่มี class “span*” เข้าไปข้างใน โดย * ที่อยู่ข้างหลัง span นั้นจะเป็นตัวเลขที่จะระบุว่าเราต้องการให้คอลัมน์นี้ “กาง” แค่ไหน สมมติว่าเราจะสร้าง layouts แบบ 12 คอลัมน์ ให้เราใส่โค้ดด้านล่างนี้เข้าไปที่ container ของเรา</p>
   <p><b>12 คอลัมน์</b></p>
   <pre class="html" bgcolor="black">&lt;div class="row"&gt;
@@ -70,11 +133,27 @@
           &lt;/div&gt; 
           &lt;div class="span4">Sidebar;/div&gt;
   &lt;/div&gt;</pre><br>
+จะเห็นว่าเราได้สร้างคอลัมน์ “span2″ กับ “span6″ ซ้อนข้างในคอลัมน์ “span8″ ซึ่งคอลัมน์ที่อยู่ภายในทั้ง 2 คอลัมน์<br> 
+จะกางเต็มคอลัมน์ข้างนอกพอดีเนื่องจาก 2 + 6 = 8
+      <br>
+      <hr>
+      <h3>Test</h3>
+      <p>Lorem ipsum...</p>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-
-
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
 
 </body>
 </html>
